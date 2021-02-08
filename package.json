@@ -4,7 +4,7 @@
     "description": "Users Admin",
     "main": "index.js",
     "scripts": {
-        "start": "node ."
+        "dev": "nodemon src/routes/index.js"
     },
     "keywords": [
         "gestor",

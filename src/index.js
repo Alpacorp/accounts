@@ -9,7 +9,7 @@ const path = require('path');
 const server = express();
 server.use(cors());
 server.use(bodyparser.json());
-server.use('/static', express.static('./static/'))
+server.use('/static', express.static('./static/'));
 
 //Routes
 server.use(require('./routes/users'));
