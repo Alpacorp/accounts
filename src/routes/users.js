@@ -4,7 +4,7 @@ const { sequelize } = require("../../database/connect");
 // const { transformNompropText } = require('../middlewares/middlewares');
 
 router.get("/", (req, res) => {
-  res.send("hello world accounts");
+  res.send("hello world accounts test 1");
   console.log("hola");
 });
 
