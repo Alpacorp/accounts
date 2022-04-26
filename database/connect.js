@@ -14,3 +14,6 @@ const sequelize = new Sequelize(process.env.CON3CT);
 // const mysql2 = require('mysql2');
 
 module.exports = { sequelize };
+// const mysql2 = require('mysql2');
+
+module.exports = { sequelize };
