@@ -10,7 +10,7 @@ router.get("/phones/:phone", (req, res) => {
     })
     .then((users) => {
       res.json({
-        data: users[0],
+        message: users[0],
       });
     })
     .catch((error) => {
