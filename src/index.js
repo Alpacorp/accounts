@@ -20,10 +20,6 @@ server.use(require("./routes/profiles"));
 server.use(require("./routes/cities"));
 server.use(require("./routes/phones"));
 
-//Middlewares
-// const { transformNompropText } = require('./middlewares/middlewares');
-// server.use(require('./middlewares/middlewares'));
-
 //Settings
 server.set("port", process.env.PORT || 7000);
 const signature = "A1p4c0rp";

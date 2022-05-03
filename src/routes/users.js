@@ -3,8 +3,7 @@ const router = express.Router();
 const { sequelize } = require("../../database/connect");
 
 router.get("/", (req, res) => {
-  res.send("hello world accounts test 1");
-  console.log("hola");
+  res.send("social accounts manager");
 });
 
 router.get("/users", (req, res) => {

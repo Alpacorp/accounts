@@ -1,12 +1,17 @@
 require("dotenv").config();
 const Sequelize = require("sequelize");
 
-// const sequelize = new Sequelize("mysql://root@localhost:3307/social_accounts");
+const devEnv = process.env.DEV_ENV;
+let sequelize = "";
 
-const sequelize = new Sequelize(process.env.CON3CTHE);
+if (devEnv === "true") {
+  sequelize = new Sequelize(process.env.CON3CTLO);
+  console.log("local connection");
+} else {
+  sequelize = new Sequelize(process.env.CON3CTHE);
+  console.log("heroku connection");
+}
 
-// const sequelize = new Sequelize(
-//   "mysql://be9347c52cb2f1:2d68da1d@us-cdbr-east-03.cleardb.com/heroku_cdadabb8d019873"
-// );
+console.log(devEnv);
 
 module.exports = { sequelize };
