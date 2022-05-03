@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const { sequelize } = require("../../database/connect");
-// const { transformNompropText } = require('../middlewares/middlewares');
 
 router.get("/", (req, res) => {
   res.send("hello world accounts test 1");
