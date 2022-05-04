@@ -65,12 +65,12 @@ router.post("/phones", (req, res) => {
     });
 });
 
-router.put("/phones/:phone", (req, res) => {
-  const phone = req.params.phone;
+router.put("/phones/:id", (req, res) => {
+  const id = req.params.id;
   const { number, operator } = req.body;
   sequelize
-    .query("UPDATE phones SET number = ?, operator = ? WHERE phone = ?", {
-      replacements: [number, operator, phone],
+    .query("UPDATE phones SET number = ?, operator = ? WHERE idphone = ?", {
+      replacements: [number, operator, id],
     })
     .then((phone) => {
       res.json({
