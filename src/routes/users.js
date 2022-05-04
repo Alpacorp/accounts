@@ -87,7 +87,6 @@ router.post("/users", (req, res) => {
       res.json({
         message: "user created sucessfully",
       });
-      console.log(username);
     })
     .catch((error) => {
       console.log(error);
