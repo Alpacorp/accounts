@@ -4,7 +4,7 @@ const { sequelize } = require("../../database/connect");
 
 router.get("/phones", (req, res) => {
   sequelize
-    .query("SELECT * FROM phones DESC", {
+    .query("SELECT * FROM phones ORDER BY idphone DESC", {
       type: sequelize.QueryTypes.SELECT,
     })
     .then((phones) => {
@@ -20,7 +20,7 @@ router.get("/phones", (req, res) => {
 router.get("/phones/:phone", (req, res) => {
   const phone = req.params.phone;
   sequelize
-    .query("SELECT * FROM phones WHERE phone = ? DESC", {
+    .query("SELECT * FROM phones WHERE phone = ?", {
       replacements: [phone],
     })
     .then((phones) => {
