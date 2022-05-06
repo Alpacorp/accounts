@@ -20,7 +20,7 @@ router.get("/phones", (req, res) => {
 router.get("/phones/:phone", (req, res) => {
   const phone = req.params.phone;
   sequelize
-    .query("SELECT * FROM phones WHERE phone = ?", {
+    .query("SELECT * FROM phones WHERE number = ?", {
       replacements: [phone],
     })
     .then((phones) => {
