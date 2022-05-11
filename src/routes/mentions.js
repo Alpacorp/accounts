@@ -17,6 +17,21 @@ router.get("/mentions", (req, res) => {
     });
 });
 
+router.get("/mentions/200", (req, res) => {
+  sequelize
+    .query("SELECT * FROM mentions ORDER BY idmention DESC LIMIT 200", {
+      type: sequelize.QueryTypes.SELECT,
+    })
+    .then((mention) => {
+      res.json({
+        message: mention,
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
 router.get("/mentionscount/:iduserment/:typeaccment", (req, res) => {
   const iduserment = req.params.iduserment;
   const typeaccment = req.params.typeaccment;
