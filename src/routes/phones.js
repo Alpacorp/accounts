@@ -52,7 +52,7 @@ router.get("/phones/media/:phone", (req, res) => {
 router.post("/phones", (req, res) => {
   const { number, operator, comment } = req.body;
   sequelize
-    .query("INSERT INTO phones VALUES (null, ?, ?, ? null)", {
+    .query("INSERT INTO phones VALUES (null, ?, ?, ?, null)", {
       replacements: [number, operator, comment],
     })
     .then((phone) => {
