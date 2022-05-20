@@ -50,10 +50,10 @@ router.get("/phones/media/:phone", (req, res) => {
 });
 
 router.post("/phones", (req, res) => {
-  const { number, operator } = req.body;
+  const { number, operator, comment } = req.body;
   sequelize
-    .query("INSERT INTO phones VALUES (null, ?, ?, null)", {
-      replacements: [number, operator],
+    .query("INSERT INTO phones VALUES (null, ?, ?, ? null)", {
+      replacements: [number, operator, comment],
     })
     .then((phone) => {
       res.json({
@@ -67,11 +67,14 @@ router.post("/phones", (req, res) => {
 
 router.put("/phones/:id", (req, res) => {
   const id = req.params.id;
-  const { number, operator } = req.body;
+  const { number, operator, comment } = req.body;
   sequelize
-    .query("UPDATE phones SET number = ?, operator = ? WHERE idphone = ?", {
-      replacements: [number, operator, id],
-    })
+    .query(
+      "UPDATE phones SET number = ?, operator = ?, comment = ? WHERE idphone = ?",
+      {
+        replacements: [number, operator, comment, id],
+      }
+    )
     .then((phone) => {
       res.json({
         message: "Phone updated",
