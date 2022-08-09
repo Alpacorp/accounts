@@ -19,6 +19,7 @@ server.use(require("./routes/agents"));
 server.use(require("./routes/profiles"));
 server.use(require("./routes/cities"));
 server.use(require("./routes/phones"));
+server.use(require("./routes/costumers"));
 
 //Settings
 server.set("port", process.env.PORT || 7000);
