@@ -18,7 +18,7 @@ router.get("/costumers", (req, res) => {
 });
 
 router.get("/costumers/:idcostumer", (req, res) => {
-  const idcostumer = req.params.phone;
+  const idcostumer = req.params.idcostumer;
   sequelize
     .query("SELECT * FROM costumers WHERE idcostumer = ?", {
       replacements: [idcostumer],
@@ -50,7 +50,7 @@ router.post("/costumers", (req, res) => {
 });
 
 router.put("/costumers/:idcostumer", (req, res) => {
-  const idcostumer = req.params.id;
+  const idcostumer = req.params.idcostumer;
   const { costumer, comment } = req.body;
   sequelize
     .query("UPDATE costumers SET costumer = ?, comment = ? WHERE idcostumer = ?", {
