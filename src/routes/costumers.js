@@ -25,7 +25,7 @@ router.get("/costumers/:idcostumer", (req, res) => {
     })
     .then((costumers) => {
       res.json({
-        message: costumers,
+        message: costumers[0],
       });
     })
     .catch((error) => {
