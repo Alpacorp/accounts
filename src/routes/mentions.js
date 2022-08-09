@@ -17,10 +17,12 @@ router.get("/mentions", (req, res) => {
     });
 });
 
-router.get("/mentions/200", (req, res) => {
+router.get("/mentions/:quantity", (req, res) => {
+  const quantity = req.params.quantity;
   sequelize
-    .query("SELECT * FROM mentions ORDER BY idmention DESC LIMIT 200", {
+    .query("SELECT * FROM mentions ORDER BY idmention DESC LIMIT ?", {
       type: sequelize.QueryTypes.SELECT,
+      replacements: [quantity]
     })
     .then((mention) => {
       res.json({
